@@ -2,6 +2,7 @@
 
 namespace Runline\ProfileTool;
 
+use Illuminate\Http\Request;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool as BaseTool;
 
@@ -19,12 +20,12 @@ class ProfileTool extends BaseTool
     }
 
     /**
-     * Build the view that renders the navigation links for the tool.
+     * Build the menu that renders the navigation links for the tool.
      *
-     * @return \Illuminate\View\View
+     * @param  \Illuminate\Http\Request  $request
+     * @return mixed
      */
-    public function renderNavigation()
-    {
+    public function menu(Request $request) {
         return view('nova-profile-tool::navigation');
     }
 }
